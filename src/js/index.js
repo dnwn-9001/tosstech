@@ -22,7 +22,7 @@ const pages = {
 const router = createRouter();
 
 router
-  .addRoute("#/", pages.tech)
+  .addRoute("", pages.tech)
   .addRoute("#/tech", pages.tech)
   .addRoute("#/design", pages.design)
   .start();

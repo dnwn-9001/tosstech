@@ -1,3 +1,10 @@
+// const styleSheet = document.createElement("style");
+// styleSheet.innerText = `
+
+// `;
+
+// document.head.appendChild(styleSheet);
+
 const NavContent = () => {
   return `
         <img class="nav__logo" src="" alt="logo" srcset="" />
