@@ -1,18 +1,42 @@
 body {
   margin: auto;
+  font-family: "Noto Sans KR", sans-serif;
 }
 
 /* NavComponent */
 nav {
+  height: 60px;
+  border-bottom: 1px solid rgba(0, 27, 55, 0.1);
+  background-color: rgb(255, 255, 255);
+  position: sticky;
+  top: 0;
+}
+
+.nav__wrap {
+  width: 92%;
+  height: 100%;
+  max-width: 1140px;
+  margin: auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 15%;
-  height: 60px;
-  border-bottom: 1px solid rgba(0, 27, 55, 0.1);
 }
 
-nav > ul {
+.nav__logo__wrap {
+  display: flex;
+  cursor: pointer;
+}
+
+.nav__logo {
+  width: 21.5px;
+  height: 20px;
+}
+
+.nav__logo__wrap > svg {
+  width: 100px;
+}
+
+.nav__wrap > ul {
   display: flex;
   align-items: center;
   list-style: none;
@@ -20,6 +44,37 @@ nav > ul {
 
 .nav__item {
   padding: 0 8px;
+}
+
+.nav__item a {
+  font-size: 15px;
+  font-weight: 300;
+  padding: 12px 10px;
+  text-decoration: none;
+  text-align: left;
+  cursor: pointer;
+  background-color: transparent;
+  line-height: 20px;
+  border-radius: 8px;
+  border: 0;
+  color: rgb(78, 89, 104);
+}
+
+.nav__item a:hover {
+  background-color: rgba(2, 32, 71, 0.05);
+}
+
+.nav__item button {
+  background-color: rgb(49, 130, 246);
+  border: none;
+  border-radius: 6px;
+  width: 100px;
+  height: 32px;
+  color: rgb(249, 250, 251);
+  cursor: pointer;
+  font-size: 12px;
+  padding: 7px 12px;
+  box-sizing: border-box;
 }
 
 /* main */
@@ -90,11 +145,106 @@ section > img {
 }
 
 .section__btn {
+  width: 150px;
+  height: 40px;
   margin-top: 24px;
+  background-color: rgb(49, 130, 246);
+  border: none;
+  border-radius: 7px;
+  color: rgb(249, 250, 251);
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 11px 13px;
+  line-height: 18px;
 }
 
 /* FooterComponent */
 footer {
-  height: 361;
+  height: 361px;
   padding: 50px 0 100px 0;
+}
+
+.footer__inner {
+  display: flex;
+  flex-direction: column;
+  max-width: 1064px;
+  margin: auto;
+  padding: 0 67px;
+  box-sizing: border-box;
+}
+
+.footer__menu {
+  display: flex;
+  padding-bottom: 50px;
+  font-size: 15px;
+}
+
+.footer__menu a {
+  text-decoration: none;
+}
+
+.list__tosstech,
+.list__toss {
+  width: 170px;
+}
+
+.footer__list__title {
+  height: 35px;
+}
+
+.footer__list__content {
+  height: 30px;
+  line-height: 30px;
+  color: rgb(107, 118, 132);
+}
+
+.footer__list__content a:hover {
+  text-decoration-line: underline;
+}
+
+.footer__list__content a {
+  color: rgb(107, 118, 132);
+}
+
+.list__cs {
+  flex: 1;
+}
+
+.footer__inner ul {
+  list-style: none;
+  padding: 0;
+}
+
+address {
+  padding-bottom: 54px;
+  font-size: 15px;
+}
+
+.footer__rights__name {
+  margin: 0;
+  padding-bottom: 16px;
+  font-weight: 600;
+}
+
+.footer__copyright {
+  margin: 0;
+  font-size: 13px;
+  color: rgb(107, 118, 132);
+}
+
+.footer__btns {
+  padding: 0;
+  margin: 16px 0;
+}
+
+.footer__ul {
+  display: flex;
+  list-style: none;
+}
+
+.footer__ul li {
+  margin-right: 8px;
+  height: 40px;
+  text-align: left;
 }
