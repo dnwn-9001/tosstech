@@ -129,12 +129,23 @@ main {
 .card__title {
   color: rgb(51, 61, 75);
   transition: all 0.3s ease;
+  margin: 0;
+  margin-bottom: 14px;
 }
 
 .card__img {
   transition: all 0.3s ease;
 }
 
+.card__description {
+  margin: 0 0 12px 0;
+  color: #4e5968;
+}
+
+.card__date {
+  margin: 0;
+  color: #8b95a1;
+}
 /* sectionComponent */
 section {
   width: 100%;
