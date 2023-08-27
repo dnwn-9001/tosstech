@@ -77,6 +77,10 @@ nav {
   box-sizing: border-box;
 }
 
+.nav__item button:hover {
+  background-color: rgb(27, 100, 218);
+}
+
 /* main */
 main {
   margin: auto;
@@ -93,6 +97,16 @@ main {
 .list__title {
   margin: 52px 0 32px 0;
   padding: 20px 0;
+  color: rgb(51, 61, 75);
+}
+
+.list__ul {
+  margin: 0;
+  padding: 0;
+}
+
+.list__anchor {
+  cursor: pointer;
 }
 
 .list__box {
@@ -110,6 +124,15 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+.card__title {
+  color: rgb(51, 61, 75);
+  transition: all 0.3s ease;
+}
+
+.card__img {
+  transition: all 0.3s ease;
 }
 
 /* sectionComponent */
@@ -157,6 +180,10 @@ section > img {
   font-weight: 500;
   padding: 11px 13px;
   line-height: 18px;
+}
+
+.section__btn:hover {
+  background-color: rgb(27, 100, 218);
 }
 
 /* FooterComponent */
