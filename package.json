@@ -1,0 +1,22 @@
+{
+  "name": "tosstech",
+  "version": "1.0.0",
+  "description": "Vanilla JS로 toss tech 블로그 만들기(SPA)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dnwn-9001/tosstech.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dnwn-9001/tosstech/issues"
+  },
+  "homepage": "https://github.com/dnwn-9001/tosstech#readme",
+  "dependencies": {
+    "serve": "^14.2.1"
+  }
+}

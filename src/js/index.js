@@ -1,9 +1,9 @@
 import createRouter from "./router.js";
-import NavContent from "./layout/NavComponent.js";
-import SectionContent from "./layout/SectionComponent.js";
-import FooterContent from "./layout/FooterComponent.js";
-import TechContent from "./components/TechComponent.js";
-import DesignContent from "./components/DesignComponent.js";
+import NavContent from "./layout/Nav.js";
+import SectionContent from "./layout/Section.js";
+import FooterContent from "./layout/Footer.js";
+import TechContent from "./components/Tech.js";
+import DesignContent from "./components/Design.js";
 
 const nav = document.querySelector("nav");
 const container = document.querySelector("main");
