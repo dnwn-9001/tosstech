@@ -1,11 +1,35 @@
-const TechContent = () => {
+const MainContent = (page) => {
   const fetchDataAndRendering = async () => {
+    let dataUrl = page === "tech" ? "techData" : "designData";
+
     try {
-      const json = await (await fetch("src/json/data.json")).json();
+      const json = await (await fetch(`src/json/${dataUrl}.json`)).json();
       renderListBox(json);
     } catch (err) {
       console.log(err);
     }
+  };
+
+  const renderList = () => {
+    const $list = document.createElement("div");
+    $list.className = "list";
+
+    const $listTitle = document.createElement("h1");
+    $listTitle.className = "list__title";
+
+    page === "tech"
+      ? ($listTitle.textContent = "개발")
+      : ($listTitle.textContent = "디자인");
+
+    const $divContainer = document.createElement("div");
+    const $listUl = document.createElement("ul");
+    $listUl.className = "list__ul";
+
+    $divContainer.appendChild($listUl);
+    $list.appendChild($listTitle);
+    $list.appendChild($divContainer);
+
+    return $list;
   };
 
   const renderListBox = (data) => {
@@ -53,15 +77,7 @@ const TechContent = () => {
 
   fetchDataAndRendering();
 
-  return `
-    <div class="list">
-        <h1 class="list__title">개발</h1>
-        <div>
-            <ul class="list__ul">
-            </ul>
-        </div>
-    </div>
-    `;
+  return renderList();
 };
 
-export default TechContent;
+export default MainContent;
