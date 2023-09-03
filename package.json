@@ -4,7 +4,7 @@
   "description": "Vanilla JS로 toss tech 블로그 만들기(SPA)",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "webpack serve --mode development"
   },
   "repository": {
     "type": "git",
@@ -17,6 +17,18 @@
   },
   "homepage": "https://github.com/dnwn-9001/tosstech#readme",
   "dependencies": {
-    "serve": "^14.2.1"
+    "serve": "^14.2.1",
+    "styled-components": "^6.0.7"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.22.11",
+    "@babel/preset-env": "^7.22.14",
+    "babel-loader": "^9.1.3",
+    "css-loader": "^6.8.1",
+    "html-webpack-plugin": "^5.5.3",
+    "style-loader": "^3.3.3",
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.1"
   }
 }

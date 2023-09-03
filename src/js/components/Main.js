@@ -1,10 +1,12 @@
+import Detail from "./Detail.js";
+
 const MainContent = (page) => {
   const fetchDataAndRendering = async () => {
     let dataUrl = page === "tech" ? "techData" : "designData";
 
     try {
-      const json = await (await fetch(`src/json/${dataUrl}.json`)).json();
-      renderListBox(json);
+      const json = await (await fetch(`../../json/${dataUrl}.json`)).json();
+      renderListBox(json, dataUrl);
     } catch (err) {
       console.log(err);
     }
@@ -32,18 +34,18 @@ const MainContent = (page) => {
     return $list;
   };
 
-  const renderListBox = (data) => {
+  const renderListBox = (data, dataUrl) => {
     const listUl = document.querySelector(".list__ul");
     const listBox = data.map(
       (item) =>
         `
         <a class="list__anchor">
               <div class="list__box">
-                  <img class="card__img" src="${item.thumbnail}" alt="thumbnail"  />
+                  <img class="card__img" data-no='${item.no}' src="${item.thumbnail}" alt="thumbnail"  />
                   <div class="card__contents">
-                      <h1 class="card__title">${item.title}</h1>
-                      <p class="card__description">${item.description}</p>
-                      <p class="card__date">${item.date}</p>
+                      <h1 class="card__title"  data-no='${item.no}'>${item.title}</h1>
+                      <p class="card__description" data-no='${item.no}'>${item.description}</p>
+                      <p class="card__date" data-no='${item.no}'>${item.date}</p>
                   </div>
               </div>
         </a>
@@ -52,8 +54,24 @@ const MainContent = (page) => {
 
     listUl.innerHTML = listBox.join("");
 
+    const listBoxes = document.querySelectorAll(".list__box");
+
+    listBoxes.forEach((listBox) => {
+      listBox.addEventListener("click", (e) => {
+        const articleNo = e.target.dataset.no;
+        const main = document.querySelector("#main");
+        main.textContent = "";
+        main.innerHTML = Detail(articleNo, dataUrl);
+        history.pushState({ data: "article" }, null, `/article/${articleNo}`);
+      });
+    });
+
     const anchors = document.querySelectorAll(".list__anchor");
     const boxes = document.querySelectorAll(".list__box");
+
+    anchors.forEach((anchor) => {
+      anchor.style.textDecoration = "none";
+    });
 
     boxes.forEach((box) => {
       box.style.marginBottom = "80px";

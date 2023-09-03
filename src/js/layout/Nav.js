@@ -1,12 +1,6 @@
-// const styleSheet = document.createElement("style");
-// styleSheet.innerText = `
-// `;
-// document.head.appendChild(styleSheet);
-
 const NavContent = () => {
   return `
         <div class="nav__wrap">
-            <a href="#/tech">
                 <div class="nav__logo__wrap">
                     <img class="nav__logo" src="https://static.toss.im/tds/favicon/favicon.ico" alt="logo" srcset="" />
                     <svg enable-background="new 0 0 1094.5 200" viewBox="0 0 1094.5 200" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -22,10 +16,9 @@ const NavContent = () => {
                         </g>
                     </svg> 
                 </div>
-            </a>
             <ul>
-                <li class="nav__item"><a href="#/design">디자인</a></li>
-                <li class="nav__item"><a href="#/tech">개발</a></li>
+                <li id="designMenu" class="nav__item">디자인</a></li>
+                <li id="techMenu" class="nav__item">개발</a></li>
                 <li class="nav__item">
                     <button>채용 바로가기</button>
                 </li>
