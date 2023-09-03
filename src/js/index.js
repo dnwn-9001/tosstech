@@ -6,6 +6,13 @@ import Main from "./components/Main.js";
 import "../css/style.css";
 
 // import Detail from "./components/Detail.js";
+console.log(JSON.stringify(window.location.pathname));
+
+const path = window.location.pathname;
+setTimeout(() => {
+  console.log(path);
+  window.history.pushState({ data: "tech" }, null, path);
+}, 0);
 
 const nav = document.querySelector("nav");
 const container = document.querySelector("main");
