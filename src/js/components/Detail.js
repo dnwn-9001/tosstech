@@ -4,7 +4,7 @@
 const Detail = (articleNo, dataUrl) => {
   const getData = async (articleNo) => {
     try {
-      const json = await (await fetch(`../../json/${dataUrl}.json`)).json();
+      const json = await (await fetch(`json/${dataUrl}.json`)).json();
       renderDetail(json, articleNo);
     } catch (err) {
       console.log(err);

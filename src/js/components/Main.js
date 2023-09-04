@@ -5,7 +5,7 @@ const MainContent = (page) => {
     let dataUrl = page === "tech" ? "techData" : "designData";
 
     try {
-      const json = await (await fetch(`../../json/${dataUrl}.json`)).json();
+      const json = await (await fetch(`json/${dataUrl}.json`)).json();
       renderListBox(json, dataUrl);
     } catch (err) {
       console.log(err);
@@ -38,6 +38,7 @@ const MainContent = (page) => {
     const listUl = document.querySelector(".list__ul");
     const listBox = data.map(
       (item) =>
+        /*template*/
         `
         <a class="list__anchor">
               <div class="list__box">
