@@ -1,11 +1,13 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const CopyPlugin = require("copy-webpack-plugin");
 
 module.exports = {
   mode: "development",
   entry: "./src/js/index.js", // 프로젝트 진입점 파일
   output: {
     filename: "bundle.js", // 번들된 JavaScript 파일의 이름
+    publicPath: "/",
     path: path.resolve(__dirname, "dist"), // 번들된 파일을 저장할 경로
   },
   module: {
@@ -19,15 +21,14 @@ module.exports = {
         test: /\.css$/,
         use: ["style-loader", "css-loader"],
       },
-      {
-        test: /\.json$/,
-        loader: "json-loader",
-      },
     ],
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: "./index.html", // 사용할 HTML 템플릿 파일
+    }),
+    new CopyPlugin({
+      patterns: [{ from: "src/json", to: "json" }],
     }),
   ],
   devServer: {
@@ -35,5 +36,7 @@ module.exports = {
       directory: path.resolve(__dirname, "dist"), // 개발 서버의 루트 디렉토리 설정
     },
     port: 8080, // 개발 서버 포트
+    open: true, // 서버 실행 시 브라우저 자동으로 열기
+    hot: true,
   },
 };
