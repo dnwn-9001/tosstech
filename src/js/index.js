@@ -1,11 +1,8 @@
-// import createRouter from "./router.js";
 import Nav from "./layout/Nav.js";
 import Section from "./layout/Section.js";
 import Footer from "./layout/Footer.js";
 import Main from "./components/Main.js";
 import "../css/style.css";
-
-// import Detail from "./components/Detail.js";
 
 const nav = document.querySelector("nav");
 const container = document.querySelector("main");
@@ -18,49 +15,44 @@ footer.innerHTML = Footer();
 
 let page = "tech";
 
-// const pages = {
-//   tech: () => {
-//     page = "tech";
-//     container.textContent = "";
-//     container.appendChild(Main(page));
-//   },
-//   design: () => {
-//     page = "design";
-//     container.textContent = "";
-//     container.appendChild(Main(page));
-//   },
-//   detail: () => (container.innerHTML = Detail()),
-// };
+const handleRoute = (data) => {
+  // 초기 렌더링
+  if (data === null && !history.state) {
+    history.pushState({ data: "tech" }, null, "/tech");
+    container.textContent = "";
+    container.appendChild(Main(page));
+    return;
+  }
 
-container.appendChild(Main(page));
-history.pushState({ data: "tech" }, null, "/");
+  if (data === "tech") {
+    page = "tech";
+    container.textContent = "";
+    container.appendChild(Main(page));
+  } else if (data === "design") {
+    page = "design";
+    container.textContent = "";
+    container.appendChild(Main(page));
+  }
+};
+
+history.state == null ? handleRoute(null) : handleRoute(history.state.data);
 
 document.querySelector(".nav__logo__wrap").addEventListener("click", () => {
-  page = "tech";
-  container.textContent = "";
-  container.appendChild(Main(page));
   history.pushState({ data: "tech" }, null, "/tech");
+  handleRoute(history.state.data);
 });
 
 document.querySelector("#designMenu").addEventListener("click", () => {
-  page = "design";
-  container.textContent = "";
-  container.appendChild(Main(page));
   history.pushState({ data: "design" }, null, "/design");
+  handleRoute(history.state.data);
 });
 
 document.querySelector("#techMenu").addEventListener("click", () => {
-  page = "tech";
-  container.textContent = "";
-  container.appendChild(Main(page));
   history.pushState({ data: "tech" }, null, "/tech");
+  handleRoute(history.state.data);
 });
 
-// const router = createRouter();
-
-// router
-//   .addRoute("", pages.tech)
-//   .addRoute("#/tech", pages.tech)
-//   .addRoute("#/design", pages.design)
-//   .addRoute("#/article", pages.detail)
-//   .start();
+window.addEventListener("popstate", (e) => {
+  const { data } = e.state;
+  handleRoute(data);
+});

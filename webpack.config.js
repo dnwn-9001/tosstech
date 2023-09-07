@@ -35,6 +35,7 @@ module.exports = {
     static: {
       directory: path.resolve(__dirname, "dist"), // 개발 서버의 루트 디렉토리 설정
     },
+    historyApiFallback: true,
     port: 8080, // 개발 서버 포트
     open: true, // 서버 실행 시 브라우저 자동으로 열기
     hot: true,
