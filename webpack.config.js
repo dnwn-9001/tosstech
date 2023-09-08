@@ -28,7 +28,10 @@ module.exports = {
       template: "./index.html", // 사용할 HTML 템플릿 파일
     }),
     new CopyPlugin({
-      patterns: [{ from: "src/json", to: "json" }],
+      patterns: [
+        { from: "src/json", to: "json" },
+        { from: "src/json", to: "article/json" },
+      ],
     }),
   ],
   devServer: {

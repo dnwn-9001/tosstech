@@ -2,6 +2,7 @@ import Nav from "./layout/Nav.js";
 import Section from "./layout/Section.js";
 import Footer from "./layout/Footer.js";
 import Main from "./components/Main.js";
+import Detail from "./components/Detail.js";
 import "../css/style.css";
 
 const nav = document.querySelector("nav");
@@ -32,6 +33,10 @@ const handleRoute = (data) => {
     page = "design";
     container.textContent = "";
     container.appendChild(Main(page));
+  } else if (data === "article") {
+    const { no, jsonUrl } = history.state;
+    container.textContent = "";
+    container.innerHTML = Detail(no, jsonUrl);
   }
 };
 
