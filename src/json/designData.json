@@ -1,20 +1,29 @@
 [
   {
+    "no": 3,
     "thumbnail": "https://static.toss.im/assets/toss-tech/sim23-uss.png",
     "title": "30대 디자이너가 10대 전용 카드를 만든다면?",
     "description": "'요즘 10대는 어떤 카드를 좋아할까?', '30대인 내가 10대 친구들이 좋아하는 디자인을 할 수 있을까?' 청소년 전용 카드를 만들며 맞닥뜨렸던 혹독한 진실과, 그 과정에서 얻은 인사이트를 공유하고 싶어요.",
-    "date": "2023.8.23"
+    "date": "2023.8.23",
+    "name": "심석용 Brand Designer",
+    "photo": "https://static.toss.im/simplicity23/21-uss/speaker-seokyong.jpg"
   },
   {
+    "no": 2,
     "thumbnail": "https://static.toss.im/career-resource/slackbot101.png",
     "title": "슬랙봇 디자인 101",
     "description": "슬랙봇 디자인을 잘 하려면 무엇을 알아야하는지 알려드릴게요.",
-    "date": "2023.8.17"
+    "date": "2023.8.17",
+    "name": "강영화 Product Designer(Tools)",
+    "photo": "https://static.toss.im/illusts/profile-younghwa.jpeg"
   },
   {
+    "no": 1,
     "thumbnail": "https://static.toss.im/assets/toss-tech/node%20js-security.png",
     "title": "프로덕트 브랜딩, 어떻게 시작해야할까?",
     "description": "처음 프로덕트 브랜딩 팀이 만들어졌을 때, 어떻게 팀의 정체성을 찾아나갔는지 공유할게요.",
-    "date": "2023.8.10"
+    "date": "2023.8.10",
+    "name": "김지윤 Product Branding Team Leader",
+    "photo": "https://static.toss.im/simplicity23/16-logo/jiyoon.png"
   }
 ]
