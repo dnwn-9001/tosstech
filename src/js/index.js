@@ -10,7 +10,7 @@ const container = document.querySelector("main");
 const section = document.querySelector("section");
 const footer = document.querySelector("footer");
 
-nav.innerHTML = Nav();
+nav.appendChild(Nav());
 section.innerHTML = Section();
 footer.innerHTML = Footer();
 
