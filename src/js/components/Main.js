@@ -40,16 +40,14 @@ const MainContent = (page) => {
       (item) =>
         /*template*/
         `
-        <a class="list__anchor">
-              <div class="list__box">
+              <div class="list__box" data-no='${item.no}'>
                   <img class="card__img" data-no='${item.no}' src="${item.thumbnail}" alt="thumbnail"  />
-                  <div class="card__contents">
+                  <div class="card__contents" data-no='${item.no}'>
                       <h1 class="card__title"  data-no='${item.no}'>${item.title}</h1>
                       <p class="card__description" data-no='${item.no}'>${item.description}</p>
                       <p class="card__date" data-no='${item.no}'>${item.date}</p>
                   </div>
               </div>
-        </a>
       `
     );
 
@@ -62,32 +60,32 @@ const MainContent = (page) => {
         const articleNo = e.target.dataset.no;
         const main = document.querySelector("#main");
         main.textContent = "";
-        main.innerHTML = Detail(articleNo, dataUrl);
-        history.pushState({ data: "article" }, null, `/article/${articleNo}`);
+        main.appendChild(Detail(articleNo, dataUrl));
+        const state = {
+          data: "article",
+          no: articleNo,
+          jsonUrl: dataUrl,
+        };
+        history.pushState(state, null, `/article/${articleNo}`);
       });
     });
 
-    const anchors = document.querySelectorAll(".list__anchor");
     const boxes = document.querySelectorAll(".list__box");
-
-    anchors.forEach((anchor) => {
-      anchor.style.textDecoration = "none";
-    });
 
     boxes.forEach((box) => {
       box.style.marginBottom = "80px";
     });
 
-    anchors.forEach((anchor) => {
-      const thumbnail = anchor.querySelector(".card__img");
-      const title = anchor.querySelector(".card__title");
+    boxes.forEach((box) => {
+      const thumbnail = box.querySelector(".card__img");
+      const title = box.querySelector(".card__title");
 
-      anchor.addEventListener("mouseover", () => {
+      box.addEventListener("mouseover", () => {
         title.style.color = "rgb(0,0, 238)";
         thumbnail.style.transform = `translateY(-8px)`;
       });
 
-      anchor.addEventListener("mouseout", () => {
+      box.addEventListener("mouseout", () => {
         title.style.color = "rgb(51,61,75)";
         thumbnail.style.transform = `translateY(0px)`;
       });

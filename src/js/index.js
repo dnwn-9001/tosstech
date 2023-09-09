@@ -36,7 +36,7 @@ const handleRoute = (data) => {
   } else if (data === "article") {
     const { no, jsonUrl } = history.state;
     container.textContent = "";
-    container.innerHTML = Detail(no, jsonUrl);
+    container.appendChild(Detail(no, jsonUrl));
   }
 };
 
