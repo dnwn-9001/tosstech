@@ -12,7 +12,7 @@ const footer = document.querySelector("footer");
 
 nav.appendChild(Nav());
 section.appendChild(Section());
-footer.innerHTML = Footer();
+footer.appendChild(Footer());
 
 let page = "tech";
 
