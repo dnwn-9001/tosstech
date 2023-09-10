@@ -127,7 +127,6 @@ const Detail = (articleNo, dataUrl) => {
   const voteBoxStyle = `
     margin-top: 54px;
     background-color: rgb(249, 250, 251);
-    width: 100%;
     height: auto;
     border-radius: 12px;
     display: flex;
@@ -188,6 +187,15 @@ const Detail = (articleNo, dataUrl) => {
     const createArticleContents = (article) => {
       $contentsDiv.style.cssText = contentsDivStyle;
       $contentsDiv.innerHTML = article.contents;
+      const $img = $contentsDiv.querySelector("img");
+      if ($img) {
+        $img.style.cssText = `
+          max-width: 100%;
+          border-radius: 16px;
+        `;
+      }
+
+      $contentsDiv.appendChild(createVoteBox());
       return $contentsDiv;
     };
 
@@ -247,7 +255,6 @@ const Detail = (articleNo, dataUrl) => {
 
     $articleWrap.appendChild(createArticleHeader(article));
     $articleWrap.appendChild(createArticleContents(article));
-    $articleWrap.appendChild(createVoteBox());
   };
 
   getData(articleNo);

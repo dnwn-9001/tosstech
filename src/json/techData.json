@@ -3,11 +3,11 @@
     "no": 3,
     "thumbnail": "https://static.toss.im/assets/toss-tech/slash_juneseokbeomgun_thumb.png",
     "title": "레고처럼 조립하는 토스 앱",
-    "description": "수많은 서비스를 담고 있는 대규모 iOS 앱에 어울리는 아키텍처는 무엇일까요?\n프로젝트 간의 의존성과 모듈 간의 결합도를 낮춰, 더 효율적인 서비스 개발, 관리를 이뤄낸 과정을 소개합니다. ",
+    "description": "수많은 서비스를 담고 있는 대규모 iOS 앱에 어울리는 아키텍처는 무엇일까요?<br/>프로젝트 간의 의존성과 모듈 간의 결합도를 낮춰, 더 효율적인 서비스 개발, 관리를 이뤄낸 과정을 소개합니다. ",
     "date": "2023.8.22",
     "name": "이준석/송범근  iOS Developer",
     "photo": "https://static.toss.im/assets/toss-tech/slash_juneseokbeomgeun.png",
-    "contents": "<blockquote><p>100만 줄.<p></blockquote> <p>이게 뭐냐고요?</p> <p>바로,</p><p>토스 iOS 앱의 코드량</p><p>입니다.</p> <img src=\"https://static.toss-internal.com/ipd-tcs/toss_core/live/bd962e71-ee22-4e8d-b060-0634fdadcdeb\"/>"
+    "contents": "<p>100만 줄.</p> <p><br/>이게 뭐냐고요?<br/>바로, 토스 iOS 앱의 코드량입니다.<br/><br/>토스팀은 사용자에게 가치를 전달하기 위해 끊임없이 서비스를 개발해왔어요. 지금 토스 앱 안에는 수백 개의 서비스가 들어있습니다. 그렇게 성장해오는 동안, 토스 iOS 앱도 Swift 100만 줄이 넘는 거대한 프로젝트로 자라났습니다.<br/><br/></p><p>이 글을 읽고 계신 iOS 개발자분들에게 질문을 드려볼게요.</p><p>이렇게 프로젝트가 크고 복잡해지면 뭘 해야 할까요?</p><p>바로 모듈 분리입니다!</p><p>앱을 하나의 큰 Xcode 프로젝트로 관리하는 대신, 여러 개의 작은 모듈로 나눕니다. 그리고 모듈 간의 적절한 구조를 설계하는 거죠.</p><p>코드 베이스가 커지면, 모듈 분리도 점점 더 중요해지죠. 그래서 토스 iOS 챕터도 모듈화에 대한 많은 고민을 했는데요. </p><p>이 글에서는, 저희가 어떻게 슈퍼 앱 토스의 모듈을 관리하고 있는지 살펴볼게요.</p><p>먼저 기존 토스 앱의 구조를 알아봐야겠죠? </p><img src=\"https://static.toss-internal.com/ipd-tcs/toss_core/live/bd962e71-ee22-4e8d-b060-0634fdadcdeb\"/><p>기존 토스 앱은 가장 일반적인 계층 구조로 이루어져 있었어요. 책임과 역할에 따라 계층을 나눠 해당 계층에는 그에 맞는 모듈들이 위치하고, 하위 계층에 있는 모듈은 상위 계층에 있는 모듈을 의존할 수 없는 형태죠.</p>"
   },
   {
     "no": 2,
@@ -16,15 +16,17 @@
     "description": "프론트엔드에 관한 깊은 이야기를 나눌 수 있는 오프라인 커뮤니티, 프론트엔드 다이빙 클럽을 소개합니다.",
     "date": "2023.7.21",
     "name": "진유림",
-    "photo": "https://static.toss.im/assets/toss-tech/yurim-jin.jpg"
+    "photo": "https://static.toss.im/assets/toss-tech/yurim-jin.jpg",
+    "contents": "<p>안녕하세요, 토스 프론트엔드 개발자 진유림입니다. </p><p><br/>저는 개발을 처음 배울 때부터 커뮤니티 안에서 성장해왔는데요. 9XD, GDG, Facebook Developer Circle등 다양한 온/오프라인 커뮤니티에서 각양각색의 개발자를 만나며 IT업계에 대한 애정을 키우고, 지식은 나눌수록 커진다는 것을 깨달았어요.<br/></p> <p>그러나 코로나 이후로는 오프라인 모임이 중단되었고, 개발 이야기를 나눌 수 있는 사람들이 회사 내로 한정되어 버린 것이 아쉬웠어요. 그래서 시작했습니다, 다양한 회사와 다양한 연차의 개발자들이 모여 노하우를 나누는 프론트엔드 커뮤니티, ‘프론트엔드 다이빙 클럽’을요.</p><img src=\"https://static.toss-internal.com/ipd-tcs/toss_core/live/facebd3b-6ecd-4617-ae24-20726783ce5b\" /> <p>‘프론트엔드 다이빙 클럽’(이하 프다클)은 프론트엔드에 관한 깊은 이야기를 나눌 수 있는 커뮤니티입니다.<br/>격달로 소규모 오프라인 모임을 개최하며, 한 번 이상 참석한 사람들은 프라이빗 슬랙에 가입하여 온라인으로도 소통을 이어갈 수 있습니다.</p>"
   },
   {
     "no": 1,
     "thumbnail": "https://static.toss.im/assets/toss-tech/node%20js-security.png",
     "title": "Node.js url.parse() 취약점 컨트리뷰션",
-    "description": "토스 보안기술팀은 안전한 금융 서비스를 제공하기 위한 연구를 수행하고 있어요.\n많은 서비스에서 사용되고 있는 Node.js의 취약점을 분석하고 안전하게 패치될 수 있도록 기여했던 과정을 소개드려요. ",
+    "description": "토스 보안기술팀은 안전한 금융 서비스를 제공하기 위한 연구를 수행하고 있어요.<br/>많은 서비스에서 사용되고 있는 Node.js의 취약점을 분석하고 안전하게 패치될 수 있도록 기여했던 과정을 소개드려요. ",
     "date": "2023.5.12",
     "name": "표상영 Security Researcher",
-    "photo": "https://static.toss.im/assets/toss-tech/pyozzi.jpeg"
+    "photo": "https://static.toss.im/assets/toss-tech/pyozzi.jpeg",
+    "contents": "<p>토스 보안기술팀(Security Tech)에서는 개발 서비스 외에도 서비스에서 사용하고 있는 프레임워크나 Third-party에 대한 취약점 연구도 수행하고 있습니다.<br/></p> <p>이번 아티클은 Node.js의 Built-in API 중 하나인 url.parse() 의 Hostname Spoofing 취약점을 발견하고 안전한 코드로 패치될 수 있도록 컨트리뷰션 했던 과정을 다뤄보려 합니다.</p><img src=\"https://static.toss-internal.com/ipd-tcs/toss_core/live/e3f8b985-f5c3-4e89-b50f-5c711d50fe77\"/><h2>url.parse() 취약점 발생 원인</h2> <p>Node.js의 url.parse()는 WHATWG URL API 가 아닌 자체적인 스펙으로 개발된 함수입니다.</p>"
   }
 ]
