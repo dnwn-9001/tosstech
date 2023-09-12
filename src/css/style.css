@@ -1,0 +1,93 @@
+body {
+  margin: auto;
+  font-family: "Noto Sans KR", sans-serif;
+  width: 100%;
+}
+
+/* NavComponent */
+nav {
+  height: 60px;
+  border-bottom: 1px solid rgba(0, 27, 55, 0.1);
+  background-color: rgb(255, 255, 255);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+/* .nav__logo {
+  width: 21.5px;
+  height: 20px;
+} */
+
+.nav__logo__wrap > svg {
+  width: 100px;
+}
+
+/* main */
+main {
+  margin: auto;
+  max-width: 980px;
+  margin-bottom: 192px;
+}
+
+/* TechComponent */
+.list {
+  width: 92%;
+  margin: 0 auto;
+}
+
+.list__title {
+  margin: 52px 0 32px 0;
+  padding: 20px 0;
+  color: rgb(51, 61, 75);
+}
+
+.list__ul {
+  margin: 0;
+  padding: 0;
+}
+
+.list__box {
+  display: flex;
+  cursor: pointer;
+}
+
+.list__box > img {
+  width: 240px;
+  height: 240px;
+  border-radius: 14px;
+  margin-right: 48px;
+}
+
+.card__contents {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card__title {
+  color: rgb(51, 61, 75);
+  transition: all 0.3s ease;
+  margin: 0;
+  margin-bottom: 14px;
+}
+
+.card__img {
+  transition: all 0.3s ease;
+}
+
+.card__description {
+  margin: 0 0 12px 0;
+  color: #4e5968;
+}
+
+.card__date {
+  margin: 0;
+  color: #8b95a1;
+}
+
+/* FooterComponent */
+footer {
+  height: 361px;
+  padding: 50px 0 100px 0;
+}
