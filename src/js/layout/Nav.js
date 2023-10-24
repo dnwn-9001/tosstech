@@ -93,8 +93,8 @@ const Nav = () => {
     $logoWrapDiv.style.cssText = logoWrapDivStyle;
     $logoWrapDiv.className = "nav__logo__wrap";
 
-    $logoWrapDiv.appendChild($logoImg);
     $logoWrapDiv.innerHTML = createSvg();
+    $logoWrapDiv.prepend($logoImg);
 
     return $logoWrapDiv;
   };
