@@ -14,11 +14,6 @@ nav {
   z-index: 10;
 }
 
-/* .nav__logo {
-  width: 21.5px;
-  height: 20px;
-} */
-
 .nav__logo__wrap > svg {
   width: 100px;
 }
@@ -28,6 +23,7 @@ main {
   margin: auto;
   max-width: 980px;
   margin-bottom: 192px;
+  min-height: 100vh;
 }
 
 /* TechComponent */
