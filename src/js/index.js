@@ -14,6 +14,17 @@ nav.appendChild(Nav());
 section.appendChild(Section());
 footer.appendChild(Footer());
 
+class ChangeContainer {
+  constructor(page) {
+    this.page = page;
+  }
+
+  appendChild() {
+    container.textContent = "";
+    container.appendChild(Main(page));
+  }
+}
+
 let page = "tech";
 
 const handleRoute = (data) => {
@@ -29,6 +40,8 @@ const handleRoute = (data) => {
     page = "tech";
     container.textContent = "";
     container.appendChild(Main(page));
+    // const techContainer = new ChageContainer(data);
+    // techContainer.appendChild();
   } else if (data === "design") {
     page = "design";
     container.textContent = "";
