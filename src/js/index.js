@@ -15,42 +15,32 @@ section.appendChild(Section());
 footer.appendChild(Footer());
 
 class ChangeContainer {
-  constructor(page) {
-    this.page = page;
+  constructor(data) {
+    this.data = data;
   }
 
-  appendChild() {
+  appendContainer() {
     container.textContent = "";
-    container.appendChild(Main(page));
+
+    //초기렌더링
+    if (this.data === null && !history.state) {
+      history.pushState({ data: "tech" }, null, "/tech");
+      this.data = "tech";
+    }
+
+    if (this.data === "article") {
+      const { no, jsonUrl } = history.state;
+      container.appendChild(Detail(no, jsonUrl));
+      return;
+    }
+
+    container.appendChild(Main(this.data));
   }
 }
 
-let page = "tech";
-
 const handleRoute = (data) => {
-  // 초기 렌더링
-  if (data === null && !history.state) {
-    history.pushState({ data: "tech" }, null, "/tech");
-    container.textContent = "";
-    container.appendChild(Main(page));
-    return;
-  }
-
-  if (data === "tech") {
-    page = "tech";
-    container.textContent = "";
-    container.appendChild(Main(page));
-    // const techContainer = new ChageContainer(data);
-    // techContainer.appendChild();
-  } else if (data === "design") {
-    page = "design";
-    container.textContent = "";
-    container.appendChild(Main(page));
-  } else if (data === "article") {
-    const { no, jsonUrl } = history.state;
-    container.textContent = "";
-    container.appendChild(Detail(no, jsonUrl));
-  }
+  const techContainer = new ChangeContainer(data);
+  techContainer.appendContainer();
 };
 
 history.state == null ? handleRoute(null) : handleRoute(history.state.data);
