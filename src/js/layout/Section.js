@@ -42,7 +42,6 @@ const imgStyle = `
 
 const $sectionWrapDiv = document.createElement("div");
 const sectionWrapDivStyle = `
-  width: 100%;
   height: 186px;
   background-color: rgba(2, 9, 19, 0.91);
   display: flex;
