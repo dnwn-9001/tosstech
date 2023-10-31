@@ -43,21 +43,23 @@ const handleRoute = (data) => {
   techContainer.appendContainer();
 };
 
+const updateHistoryAndHandleRoute = (data, path) => {
+  history.pushState({ data: data }, null, path);
+  handleRoute(history.state.data);
+};
+
 history.state == null ? handleRoute(null) : handleRoute(history.state.data);
 
 document.querySelector(".nav__logo__wrap").addEventListener("click", () => {
-  history.pushState({ data: "tech" }, null, "/tech");
-  handleRoute(history.state.data);
+  updateHistoryAndHandleRoute("tech", "/tech");
 });
 
 document.querySelector("#designMenu").addEventListener("click", () => {
-  history.pushState({ data: "design" }, null, "/design");
-  handleRoute(history.state.data);
+  updateHistoryAndHandleRoute("design", "/design");
 });
 
 document.querySelector("#techMenu").addEventListener("click", () => {
-  history.pushState({ data: "tech" }, null, "/tech");
-  handleRoute(history.state.data);
+  updateHistoryAndHandleRoute("tech", "/tech");
 });
 
 window.addEventListener("popstate", (e) => {
