@@ -23,4 +23,5 @@ $ git clone https://github.com/dnwn-9001/tosstech.git
 $ npm install
 $ npm run start
 ```
+Open http://localhost:8080 with your browser to see the result.
 
