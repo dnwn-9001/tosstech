@@ -5,7 +5,7 @@
          
 ## 프로젝트 설명
 ### **1. 개요**
-- React, Vue 등의 프레임워크(혹은 라이브러리) 없이 Vanilla JavaScript로   
+- React, Vue 등의 라이브러리/프레임워크 없이 Vanilla JavaScript로   
   직접 SPA(Single Page Application)를 구현해 봄으로써 SPA의 동작 방식을 파악합니다.
 
 <br/>
